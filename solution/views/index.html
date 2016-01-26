@@ -28,10 +28,11 @@
       <div id="tweets">
       {% for tweet in tweets %}
         <div class="tweetbox">
-          <img>
+          <img src="{{tweet.User.pictureUrl}}">
           <div class="content">
             <p class="by"><a href="/users/{{tweet.User.name}}">{{tweet.User.name}}</a></p>
             <p><a href="/tweets/{{tweet.id}}">{{tweet.tweet}}</a></p>
+            <p><form action="/tweets/{{tweet.id}}?method=DELETE"><button>delete this tweet</button></form></p>
           </div>
         </div>
       {% endfor %}
